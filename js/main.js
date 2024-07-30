@@ -3,46 +3,49 @@ let participantes =[
         name:'Tony',
         email:'tony@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 21, 17, 19),
     },
     {
         name:'edson',
         email:'edson@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 22, 17, 19),
     },
     {
         name:'gaspar',
         email:'gaspar@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 22, 17, 19),
     },
     {
         name:'hadson',
         email:'hadson@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 22, 17, 19),
     },
     {
         name:'luzia',
         email:'luzia@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 22, 17, 19),
     },
     {
         name:'celestina',
         email:'celestina@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 22, 17, 19),
     },
     {
         name:'ailton',
         email:'ailton@gmail.com',
         dataInscricao: new Date(2024, 1, 21, 14, 0),
-        checkIn: new Date(2024, 2, 22, 17, 19)
+        checkIn: new Date(2024, 2, 22, 17, 19),
     },    
 ]
 const criarNovoParticipante = (participante) =>{
+    const dataInscricao = dayjs(Date.now()).to(participante.dataInscricao);
+    const checkIn = dayjs(Date.now()).to(participante.checkIn);
+
     return ` 
         <tr>
             <td>
@@ -50,8 +53,8 @@ const criarNovoParticipante = (participante) =>{
                 <br>
                 <small>${participante.email}</small>
             </td>
-            <td>${participante.dataInscricao}</td>
-            <td>${participante.checkIn}</td>
+            <td>${dataInscricao}</td>
+            <td>${checkIn}</td>
         </tr>`
 }
 const actualizarLista = (participantes) =>{
